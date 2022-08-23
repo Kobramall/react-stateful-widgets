@@ -37,31 +37,31 @@ STEP 6:
 import React, {useState} from 'react'; /* STEP 0 */
 
 export default function Input() {
-  const [inputValue, setInput] = useState("");
+  const [inputValue, setInput] =useState("");
 
   const changeInput = evt => {
     // When the input changes, its whole value can be found inside the event object.
-    // Log out the synthetic event object 'evt' and see fosr yourself.
-    const { value } = evt.target;
-    setInput (value);
+    // Log out the synthetic event object 'evt' and see for yourself.
+    const { setInput } = evt.target;
+    
     /* STEP 4 */
   };
   const reset = () => {
-    setInput("");
+    /* STEP 5 */
   };
 
   const style = {
     fontSize: '1.5em',
     marginBottom: '0.3em',
-    color: inputValue.length > 10 ? 'crimson' : 'royalblue'
+    color: inputValue.length < 10 ? 'crimson' : 'royalblue'
   };
 
   return (
     <div className='widget-input container'>
       <h2>Input</h2>
-      <div id='output' style={style}>{inputValue.toUpperCase()}</div> 
+      <div id='output' style={style}></div> {inputValue.toUpperCase()}
       <div>
-        <input id='input' type='text' onChange={changeInput} value={inputValue}/> 
+        <input id='input' type='text' onChange={changeInput} /> {/* STEP 6 */}
         <button id='resetInput' onClick={reset}>Reset</button>
       </div>
     </div>

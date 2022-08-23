@@ -44,7 +44,7 @@ export default function Moods() {
     setMood("Rather sad")
   };
   const reset = () => {
-    setMood("Not sure how I feel")
+    setMood("")
   };
 
   const style = {

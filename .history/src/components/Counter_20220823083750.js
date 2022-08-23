@@ -58,7 +58,7 @@ export default function Counter() {
    setCount( count - 1)
   };
   const reset = () => {
-     setCount(0);
+     setCount(count == 0);
   };
 
   const style = {
